@@ -1,8 +1,9 @@
 # coding: utf-8
-import sys
-sys.path.append('..')
-import numpy as np
-from common.util import preprocess, create_co_matrix, cos_similarity, ppmi
+import sys  # noqa
+sys.path.append('..')  # noqa
+
+import numpy as np  # noqa
+from common.util import preprocess, create_co_matrix, ppmi  # noqa
 
 
 text = 'You say goodbye and I say hello.'
@@ -14,7 +15,6 @@ W = ppmi(C)
 np.set_printoptions(precision=3)  # 有効桁３桁で表示
 print('covariance matrix')
 print(C)
-print('-'*50)
+print('-' * 50)
 print('PPMI')
 print(W)
-

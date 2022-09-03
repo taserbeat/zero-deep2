@@ -1,7 +1,8 @@
 # coding: utf-8
-import sys
-sys.path.append('..')
-from common.util import preprocess, create_co_matrix, most_similar
+import sys  # noqa
+sys.path.append('..')  # noqa
+
+from common.util import preprocess, create_co_matrix, most_similar  # noqa
 
 
 text = 'You say goodbye and I say hello.'

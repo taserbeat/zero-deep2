@@ -1,9 +1,10 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-import numpy as np
-import matplotlib.pyplot as plt
-from common.util import preprocess, create_co_matrix, ppmi
+
+import numpy as np  # noqa
+import matplotlib.pyplot as plt  # noqa
+from common.util import preprocess, create_co_matrix, ppmi  # noqa
 
 
 text = 'You say goodbye and I say hello.'
@@ -23,5 +24,5 @@ print(U[0])
 # plot
 for word, word_id in word_to_id.items():
     plt.annotate(word, (U[word_id, 0], U[word_id, 1]))
-plt.scatter(U[:,0], U[:,1], alpha=0.5)
+plt.scatter(U[:, 0], U[:, 1], alpha=0.5)
 plt.show()
