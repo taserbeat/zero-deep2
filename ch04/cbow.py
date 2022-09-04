@@ -1,9 +1,10 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common.np import *  # import numpy as np
-from common.layers import Embedding
-from ch04.negative_sampling_layer import NegativeSamplingLoss
+
+import numpy as np  # noqa
+from common.layers import Embedding  # noqa
+from ch04.negative_sampling_layer import NegativeSamplingLoss  # noqa
 
 
 class CBOW:

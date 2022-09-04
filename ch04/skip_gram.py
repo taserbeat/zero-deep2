@@ -1,8 +1,10 @@
 # coding: utf-8
 import sys
-sys.path.append('..')  # 親ディレクトリのファイルをインポートするための設定
-from common.layers import *
-from ch04.negative_sampling_layer import NegativeSamplingLoss
+sys.path.append('..')
+
+import numpy as np  # noqa
+from common.layers import Embedding  # noqa
+from ch04.negative_sampling_layer import NegativeSamplingLoss  # noqa
 
 
 class SkipGram:

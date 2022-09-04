@@ -1,19 +1,15 @@
 # coding: utf-8
-import sys
-sys.path.append('..')
-from common import config
-# GPUで実行する場合は、下記のコメントアウトを消去（要cupy）
-# ===============================================
-# config.GPU = True
-# ===============================================
-from common.np import *
-import pickle
-from common.trainer import Trainer
-from common.optimizer import Adam
-from cbow import CBOW
-from skip_gram import SkipGram
-from common.util import create_contexts_target, to_cpu, to_gpu
-from dataset import ptb
+import sys  # noqa
+sys.path.append('..')  # noqa
+
+import pickle  # noqa
+import numpy as np  # noqa
+from common.trainer import Trainer  # noqa
+from common.optimizer import Adam  # noqa
+from cbow import CBOW  # noqa
+from skip_gram import SkipGram  # noqa
+from common.util import create_contexts_target  # noqa
+from dataset import ptb  # noqa
 
 
 # ハイパーパラメータの設定
@@ -27,8 +23,6 @@ corpus, word_to_id, id_to_word = ptb.load_data('train')
 vocab_size = len(word_to_id)
 
 contexts, target = create_contexts_target(corpus, window_size)
-if config.GPU:
-    contexts, target = to_gpu(contexts), to_gpu(target)
 
 # モデルなどの生成
 model = CBOW(vocab_size, hidden_size, window_size, corpus)
@@ -42,8 +36,6 @@ trainer.plot()
 
 # 後ほど利用できるように、必要なデータを保存
 word_vecs = model.word_vecs
-if config.GPU:
-    word_vecs = to_cpu(word_vecs)
 params = {}
 params['word_vecs'] = word_vecs.astype(np.float16)
 params['word_to_id'] = word_to_id
