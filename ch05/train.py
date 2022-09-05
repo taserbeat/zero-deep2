@@ -1,10 +1,11 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common.optimizer import SGD
-from common.trainer import RnnlmTrainer
-from dataset import ptb
-from simple_rnnlm import SimpleRnnlm
+
+from common.optimizer import SGD  # noqa
+from common.trainer import RnnlmTrainer  # noqa
+from dataset import ptb  # noqa
+from simple_rnnlm import SimpleRnnlm  # noqa
 
 
 # ハイパーパラメータの設定
