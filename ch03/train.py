@@ -1,10 +1,11 @@
 # coding: utf-8
 import sys
 sys.path.append('..')  # 親ディレクトリのファイルをインポートするための設定
-from common.trainer import Trainer
-from common.optimizer import Adam
-from simple_cbow import SimpleCBOW
-from common.util import preprocess, create_contexts_target, convert_one_hot
+
+from common.trainer import Trainer  # noqa
+from common.optimizer import Adam  # noqa
+from simple_cbow import SimpleCBOW  # noqa
+from common.util import preprocess, create_contexts_target, convert_one_hot  # noqa
 
 
 window_size = 1

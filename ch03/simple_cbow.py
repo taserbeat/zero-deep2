@@ -1,8 +1,9 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-import numpy as np
-from common.layers import MatMul, SoftmaxWithLoss
+
+import numpy as np  # noqa
+from common.layers import MatMul, SoftmaxWithLoss  # noqa
 
 
 class SimpleCBOW:
