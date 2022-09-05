@@ -1,4 +1,4 @@
-# 0 から作る Deep Learning 2
+# ゼロから作る Deep Learning 2
 
 書籍を勉強する際に書いたコードを保管する。
 
