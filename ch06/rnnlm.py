@@ -1,8 +1,10 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common.time_layers import *
-from common.base_model import BaseModel
+
+import numpy as np  # noqa
+from common.time_layers import TimeEmbedding, TimeLSTM, TimeAffine, TimeSoftmaxWithLoss  # noqa
+from common.base_model import BaseModel  # noqa
 
 
 class Rnnlm(BaseModel):

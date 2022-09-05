@@ -1,11 +1,12 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common.optimizer import SGD
-from common.trainer import RnnlmTrainer
-from common.util import eval_perplexity
-from dataset import ptb
-from rnnlm import Rnnlm
+
+from common.optimizer import SGD  # noqa
+from common.trainer import RnnlmTrainer  # noqa
+from common.util import eval_perplexity  # noqa
+from dataset import ptb  # noqa
+from rnnlm import Rnnlm  # noqa
 
 
 # ハイパーパラメータの設定

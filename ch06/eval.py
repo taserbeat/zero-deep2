@@ -1,15 +1,16 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from rnnlm import Rnnlm
-from better_rnnlm import BetterRnnlm
-from dataset import ptb
-from common.util import eval_perplexity
+
+from rnnlm import Rnnlm  # noqa
+from better_rnnlm import BetterRnnlm  # noqa
+from dataset import ptb  # noqa
+from common.util import eval_perplexity  # noqa
 
 
 if __name__ == '__main__':
     model = Rnnlm()
-    #model = BetterRnnlm()
+    # model = BetterRnnlm()
 
     # 学習済みのパラメータの読み込み
     model.load_params()

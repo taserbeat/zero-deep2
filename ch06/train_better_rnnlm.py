@@ -1,16 +1,13 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common import config
-# GPUで実行する場合は下記のコメントアウトを消去（要cupy）
-# ==============================================
-# config.GPU = True
-# ==============================================
-from common.optimizer import SGD
-from common.trainer import RnnlmTrainer
-from common.util import eval_perplexity, to_gpu
-from dataset import ptb
-from better_rnnlm import BetterRnnlm
+
+from common import config  # noqa
+from common.optimizer import SGD  # noqa
+from common.trainer import RnnlmTrainer  # noqa
+from common.util import eval_perplexity  # noqa
+from dataset import ptb  # noqa
+from better_rnnlm import BetterRnnlm  # noqa
 
 
 # ハイパーパラメータの設定
@@ -27,11 +24,6 @@ dropout = 0.5
 corpus, word_to_id, id_to_word = ptb.load_data('train')
 corpus_val, _, _ = ptb.load_data('val')
 corpus_test, _, _ = ptb.load_data('test')
-
-if config.GPU:
-    corpus = to_gpu(corpus)
-    corpus_val = to_gpu(corpus_val)
-    corpus_test = to_gpu(corpus_test)
 
 vocab_size = len(word_to_id)
 xs = corpus[:-1]
