@@ -19,7 +19,16 @@ readonly TARGETS=("all" "ch06")
 function download_ch06() {
   cd "${SCRIPT_DIR}/ch06"
 
-  curl -O https://github.com/taserbeat/zero-deep2/releases/download/parameters/BetterRnnlm.pkl
+  if [ -e "BetterRnnlm.pkl" ]; then
+    rm "BetterRnnlm.pkl"
+  fi
+
+  # 参考1: https://qiita.com/takayukioda/items/edf371b3566bea64d046
+  # 参考2: https://qiita.com/minamijoyo/items/0affb46414cb746438bc
+  # -Lはリダイレクトがあった際も追従してダウンロードするためのオプション
+  # -Lオプションがない場合はダウンロードファイルが0バイトとなって失敗するので、
+  # GitHubのreleasesはリダイレクトが発生するのだと思われる (参考2.)
+  curl -o ./BetterRnnlm.pkl -L https://github.com/taserbeat/zero-deep2/releases/download/parameters/BetterRnnlm.pkl
 
   cd "${SCRIPT_DIR}"
 }
