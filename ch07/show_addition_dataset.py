@@ -1,11 +1,12 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from dataset import sequence
+
+from dataset import sequence  # noqa
 
 
 (x_train, t_train), (x_test, t_test) = \
-    sequence.load_data('addition.txt', seed=1984)
+    sequence.load_data('addition.txt', seed=1984)  # type: ignore
 char_to_id, id_to_char = sequence.get_vocab()
 
 print(x_train.shape, t_train.shape)

@@ -1,18 +1,18 @@
-# coding: utf-8
+# coding: utf-8  # noqa
 import sys
 sys.path.append('..')
-import numpy as np
-import matplotlib.pyplot as plt
-from dataset import sequence
-from common.optimizer import Adam
-from common.trainer import Trainer
-from common.util import eval_seq2seq
-from seq2seq import Seq2seq
-from peeky_seq2seq import PeekySeq2seq
 
+import numpy as np  # noqa
+import matplotlib.pyplot as plt  # noqa
+from dataset import sequence  # noqa
+from common.optimizer import Adam  # noqa
+from common.trainer import Trainer  # noqa
+from common.util import eval_seq2seq  # noqa
+from seq2seq import Seq2seq  # noqa
+from peeky_seq2seq import PeekySeq2seq  # noqa
 
 # データセットの読み込み
-(x_train, t_train), (x_test, t_test) = sequence.load_data('addition.txt')
+(x_train, t_train), (x_test, t_test) = sequence.load_data('addition.txt')  # type: ignore
 char_to_id, id_to_char = sequence.get_vocab()
 
 # Reverse input? =================================================
@@ -30,8 +30,8 @@ max_epoch = 25
 max_grad = 5.0
 
 # Normal or Peeky? ==============================================
-model = Seq2seq(vocab_size, wordvec_size, hidden_size)
-# model = PeekySeq2seq(vocab_size, wordvec_size, hidden_size)
+# model = Seq2seq(vocab_size, wordvec_size, hidden_size)
+model = PeekySeq2seq(vocab_size, wordvec_size, hidden_size)
 # ================================================================
 optimizer = Adam()
 trainer = Trainer(model, optimizer)
@@ -59,4 +59,3 @@ plt.xlabel('epochs')
 plt.ylabel('accuracy')
 plt.ylim(0, 1.0)
 plt.show()
-

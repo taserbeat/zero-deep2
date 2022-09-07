@@ -1,8 +1,9 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from rnnlm_gen import RnnlmGen
-from dataset import ptb
+
+from rnnlm_gen import RnnlmGen  # noqa
+from dataset import ptb  # noqa
 
 
 corpus, word_to_id, id_to_word = ptb.load_data('train')

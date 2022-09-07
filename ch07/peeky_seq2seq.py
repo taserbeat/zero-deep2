@@ -1,8 +1,10 @@
 # coding: utf-8
 import sys
 sys.path.append('..')
-from common.time_layers import *
-from seq2seq import Seq2seq, Encoder
+
+import numpy as np  # noqa
+from common.time_layers import TimeEmbedding, TimeLSTM, TimeAffine, TimeSoftmaxWithLoss  # noqa
+from seq2seq import Seq2seq, Encoder  # noqa
 
 
 class PeekyDecoder:
